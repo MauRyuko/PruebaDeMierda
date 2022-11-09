@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BasePage {
-    protected WebDriver webDriver = new ChromeDriver();
+    protected WebDriver driver = new ChromeDriver();
     protected String url;
 
     public BasePage() {
@@ -12,7 +12,14 @@ public class BasePage {
     }
 
     public void navigateToPage(String url){
-        webDriver.navigate().to(url);
+        driver.navigate().to(url);
     }
 
+    public void maximizeWindowDriver(){
+        driver.manage().window().maximize();
+    }
+
+    public void windowQuit(){
+        driver.quit();
+    }
 }
